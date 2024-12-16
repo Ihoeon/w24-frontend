@@ -8,7 +8,7 @@ const App = () => {
   const fetchData = async () => {
     try {
       //const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080/api/message'
-      const apiUrl = 'process.env.REACT_APP_API_URL'
+      const apiUrl = process.env.REACT_APP_API_URL
 
       const response = await fetch(apiUrl)
 
@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Backend로부터 받은 메시지</h1>
+      <h1>Backend로 받은 메시지</h1>
       <p>{message}</p>
     </div>
   )
