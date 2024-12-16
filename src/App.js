@@ -8,7 +8,7 @@ const App = () => {
   const fetchData = async () => {
     try {
       //const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080/api/message'
-      const apiUrl = 'http://localhost:8080/api/message'
+      const apiUrl = 'process.env.REACT_APP_API_URL'
 
       const response = await fetch(apiUrl)
 
