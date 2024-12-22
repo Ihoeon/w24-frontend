@@ -36,7 +36,7 @@ export default function Home() {
       post => post.category === activeCategory
     );
     setPosts(filteredPosts);
-  }, [activeCategory]);
+  }, [activeCategory],  [samplePosts]);
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
