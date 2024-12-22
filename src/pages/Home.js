@@ -8,16 +8,20 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`/api/posts?category=${activeCategory}`);
+        const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
+        const response = await fetch(`${backendUrl}/api/posts`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
-        setPosts(data);
+        setPosts(data);  // setPosts는 posts 상태를 업데이트하는 함수
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
     };
-
+  
     fetchPosts();
-  }, [activeCategory]);
+  }, []);
 
   return (
     <div className="container">
