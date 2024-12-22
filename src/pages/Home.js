@@ -54,8 +54,8 @@ export default function Home() {
         {posts.map(post => (
           <div key={post.id} className="post-card">
             <h3>{post.title}</h3>
-            <span className="date">{post.date}</span>
-            <p>{post.description}</p>
+
+            <p>{post.text}</p>
           </div>
         ))}
       </div>
