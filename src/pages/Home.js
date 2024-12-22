@@ -23,25 +23,26 @@ export default function Home() {
     <div className="container">
       <h1>A Things What I like</h1>
       
-      <nav className="category-nav">
-  <a 
+    
+    <nav className="category-nav">
+  <button 
     className={activeCategory === 'Games' ? 'active' : ''} 
     onClick={() => setActiveCategory('Games')}
   >
     Games
-  </a>
-  <a 
+  </button>
+  <button 
     className={activeCategory === 'Watches' ? 'active' : ''} 
     onClick={() => setActiveCategory('Watches')}
   >
     Watches
-  </a>
-  <a 
+  </button>
+  <button 
     className={activeCategory === 'Movies' ? 'active' : ''} 
     onClick={() => setActiveCategory('Movies')}
   >
     Movies
-  </a>
+  </button>
 </nav>
 
       <div className="hero-section">

@@ -11,21 +11,48 @@ h1 {
 }
 
 .category-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 20px 0;
-}
-
-.category-nav span {
-  cursor: pointer;
-  color: #666;
-  font-size: 20px;
-}
-
-.category-nav span:hover {
-  color: #000;
-}
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* 간격을 더 넓게 조정 */
+    margin: 30px 0;
+    text-align: center;
+  }
+  
+  .category-nav button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 15px; /* 좌우 패딩 추가 */
+    font-size: 14px;
+    position: relative; /* 구분선을 위한 position 설정 */
+  }
+  
+  /* 구분선 스타일 수정 */
+  .category-nav button:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -20px; /* 구분선 위치 조정 */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px; /* 구분선 높이 */
+    width: 1px;
+    background-color: #666;
+  }
+  
+  .category-nav button:hover {
+    color: #000;
+  }
+  
+  .category-nav button.active {
+    color: #000;
+  }
+  
+  .category-nav button:not(:last-child)::after {
+    content: "";
+    border-right: 1px solid #666;
+    margin-left: 20px;
+  }
 
 .hero-section {
   background-color: #f8f9fa;
