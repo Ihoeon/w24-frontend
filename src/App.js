@@ -1,39 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import Home from './pages/Home';
+import './styles/styles.css';
 
-import './App.css'
 
-const App = () => {
-  const [message, setMessage] = useState('서버 접속 중...')
-
-  const fetchData = async () => {
-    try {
-      //const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080/api/message'
-      const apiUrl = process.env.REACT_APP_API_URL
-
-      const response = await fetch(apiUrl)
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-
-      const data = await response.json()
-
-      setMessage(data.status);
-    } catch (error) {
-      console.error('Error fetching data: ', error)
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
+function App() {
   return (
-    <div className="App">
-      <h1>a Message from BackEnd</h1>
-      <p>{message}</p>
-    </div>
-  )
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
