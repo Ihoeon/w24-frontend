@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import CategoryNav from '../components/CategoryNav';
-import PostCard from '../components/PostCard';
+//import CategoryNav from '../components/CategoryNav';
+//import PostCard from '../components/PostCard';
 import '../styles/styles.css';
 
 export default function Home() {
