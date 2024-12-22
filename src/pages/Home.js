@@ -8,7 +8,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
+        const backendUrl = process.env.REACT_APP_BACKEND_URL;
         const response = await fetch(`${backendUrl}/api/posts`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -55,6 +55,12 @@ export default function Home() {
       </div>
 
       <div className="posts-grid">
+        {posts.map(post => (
+  <div key={post.id} className="post-card">
+    <h3>{post.title}</h3>
+    <p>{post.text}</p>
+  </div>
+))}
         {posts.map(post => (
           <div key={post.id} className="post-card">
             <h3>{post.title}</h3>
